@@ -29,9 +29,9 @@ func CreateToken(id int)(string,error){
     }
 
 	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file")
+	// }
 
 	SecretKeyString := os.Getenv("SECRET_KEY")
 	if SecretKeyString == "" {

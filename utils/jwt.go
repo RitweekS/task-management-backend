@@ -1,12 +1,11 @@
 package utils
 
 import (
-	"log"
+	"fmt"
 	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/joho/godotenv"
 )
 
 type Claims struct {
@@ -28,17 +27,12 @@ func CreateToken(id int)(string,error){
         },
     }
 
-	err := godotenv.Load()
-	// if err != nil {
-	// 	log.Fatalf("Error loading .env file")
-	// }
-
 	SecretKeyString := os.Getenv("SECRET_KEY")
 	if SecretKeyString == "" {
-		log.Fatalf("Secret key not found")
+		fmt.Println("Secret key not found")
 	}
-	SecretKey := []byte(SecretKeyString)
 	
+	SecretKey = []byte(SecretKeyString)
 
     token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	tokenString,err := token.SignedString(SecretKey)

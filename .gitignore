@@ -1,0 +1,44 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of `go build` and `go run`
+/build
+/*.out
+
+# Dependency directories (remove the comment below if vendoring dependencies)
+/vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Go module files
+go.sum
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Environment variable files
+.env
+
+# Node modules (if applicable for mixed frontend/backend projects)
+node_modules/
+
+# Docker-related files
+docker-compose.override.yml
+
+# macOS specific files
+.DS_Store
+
+# Temporary files created by Go
+*.tmp
+*.temp

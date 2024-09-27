@@ -14,6 +14,15 @@ type UserController struct {
 	userService *service.UserService
 }
 
+func (u *UserController) Check(cxt *gin.Context){
+	
+
+	cxt.JSON(http.StatusOK,common.Response{
+		ResponseMessage: "working",
+		ResponseCode: http.StatusOK,
+		ResponseData: "",
+	})
+}
 func (u *UserController) SignUp(cxt *gin.Context){
 	var requestBody user.User
 

@@ -10,6 +10,8 @@ import (
 func InitializeRoutes(router *gin.Engine){
 	userController := controller.UserController{}
 	taskController := controller.TaskController{}
+	router.GET("/",userController.Check)
+
 	v1:= router.Group("/v1")
 	{
 		v1.POST("/signup",userController.SignUp)
